@@ -15,8 +15,12 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-# Set page title
-st.set_page_config(page_title="ChatGPT Streamlit App")
+st.set_page_config(
+    page_title="ChatGPT Streamlit App",
+    page_icon=":robot_face:",
+    layout="wide",
+    initial_sidebar_state="auto"
+)
 
 # Define function to generate response to user input
 def generate_response(input_text):
@@ -30,3 +34,4 @@ input_text = st.text_input("Ask a question or enter some text here:", value="")
 if st.button("Get Response"):
     response = generate_response(input_text)
     st.write("ChatGPT:", response)
+
