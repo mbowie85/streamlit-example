@@ -14,7 +14,6 @@ forums](https://discuss.streamlit.io).
 
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
-import streamlit as st
 
 # Set page title
 st.set_page_config(page_title="ChatGPT Streamlit App")
