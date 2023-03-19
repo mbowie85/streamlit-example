@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 
 """
-# Welcome to Streamlit!
+# Welcome to ruv Streamlit!
 
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
@@ -31,4 +31,3 @@ input_text = st.text_input("Ask a question or enter some text here:", value="")
 if st.button("Get Response"):
     response = generate_response(input_text)
     st.write("ChatGPT:", response)
-
