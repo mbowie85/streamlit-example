@@ -1,6 +1,6 @@
 # GPT Tax Advisor Bot (v0.0.1)
 
-GPT Tax Advisor Bot is designed to help users prepare their tax returns by asking a series of questions and preparing a final tax document. The bot responds with one question at a time to guide users through the tax preparation process.
+The GPT Tax Advisor Bot is a powerful and interactive tool built on OpenAI's GPT-3.5 and GPT-4 language models. It is designed to help users with tax-related inquiries and guide them through the process of preparing their tax returns. By asking a series of questions, the bot collects necessary information and prepares a final tax document. The bot is suitable for individuals, freelancers, and small business owners. 
 
 ## Demo
 https://ruvnet-streamlit-example-streamlit-app-5hckua.streamlit.app/
@@ -99,6 +99,36 @@ curl https://api.openai.com/v1/engines/davinci
 ```
 
 Replace `YOUR_API_KEY` with your actual API key from OpenAI.
+
+## Deploy the GPT Tax Advisor Bot on Streamlit
+
+1. Install Streamlit and OpenAI Python packages (if you haven't already):
+
+bash
+pip install streamlit openai 
+
+2. Clone the Streamlit example repository from GitHub:
+
+git clone https://github.com/ruvnet/streamlit-example.git
+
+3. Navigate to the streamlit-example folder:
+cd streamlit-example
+
+4. Replace the code in app.py with the GPT Tax Advisor Bot code you provided earlier or modify the code to match your requirements.
+
+5. Set up your OpenAI API key as a Streamlit secret. Create a secrets.toml file in the streamlit-example folder with the following content:
+
+[default]
+openai_api_key = "YOUR_OPENAI_API_KEY"
+
+Replace YOUR_OPENAI_API_KEY with your actual OpenAI API key.
+
+6. Run the Streamlit app locally:
+
+streamlit run streamlit_app.py 
+
+7. To deploy the app on Streamlit Sharing, follow the official Streamlit Sharing documentation.
+Remember to use the GPT Tax Advisor Bot at your own risk and consult a tax professional for specific guidance on your tax situation.
 
 ## Disclaimer
 
