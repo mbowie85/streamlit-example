@@ -85,3 +85,5 @@ if submit_button:
     # Clear input after sending the message and rerun the app
     st.experimental_rerun()
 
+    col1.markdown('<div style="size:9px">Built by <a href="https://twitter.com/ruv">@rUv</a> | USE AT YOUR OWN RISK</div>', unsafe_allow_html=True)
+
