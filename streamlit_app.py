@@ -29,7 +29,7 @@ custom_css = """
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # Set up OpenAI API
-openai.api_key = st.secrets.get("openai_api_key", "")
+openai.api_key = st.secrets["openai_api_key"]
 
 # Function to get response from OpenAI API
 def get_openai_response(user_input, message_history):
