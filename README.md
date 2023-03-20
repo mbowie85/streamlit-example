@@ -85,17 +85,64 @@ Assistant: Hello! I'm your friendly GPT tax advisor bot (v0.0.1), and I'm here t
 
 To use the GPT Tax Advisor Bot with the Curl command using the OpenAI API, you can use the following example:
 
-```bash
-curl https://api.openai.com/v1/engines/davinci
-
--codex/completions
--H "Content-Type: application/json"
--H "Authorization: Bearer YOUR_API_KEY"
--d '{
-"prompt": "You're a GPT tax advisor bot (v0.0.1). Your job is to help prepare a tax return by asking questions, then preparing a final tax document. Make sure you only respond with one question at a time.\n\nUser: Help me with my taxes as an individual.",
-"max_tokens": 50,
-"temperature": 0.5
-}'
+```curl -i -X POST \
+   -H "Authorization:Bearer <openai-key>" \
+   -H "Content-Type:application/json" \
+   -d \
+'{
+  "model": "gpt-4",
+  "max_tokens": 200,
+  "temperature": 0.9,
+  "n": 1,
+  "stream": false,
+  "messages": [
+    {
+      "role": "system",
+      "content": "You\''re a GPT tax advisor bot (v0.0.1). Your job is to help prepare a tax return by asking questions, then preparing a final tax document. Make sure you only respond with one question at a time. Users can ask for help, more details or a summary at any time. Begin by introducing yourself and asking where the user is located."
+    },
+    {
+      "role": "user",
+      "content": "Help me with my taxes as an individual."
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I\''m your friendly GPT tax advisor bot (v0.0.1), and I\''m here to help you prepare your individual tax return by asking you a series of questions. Once we\''ve gathered all the necessary information, I\''ll prepare your final tax document. Let\''s get started! Where are you located?"
+    },
+    {
+      "role": "user",
+      "content": "United States"
+    },
+    {
+      "role": "assistant",
+      "content": "Which state do you live in?"
+    },
+    {
+      "role": "user",
+      "content": "California"
+    },
+    {
+      "role": "assistant",
+      "content": "What city or jurisdiction do you live in?"
+    },
+    {
+      "role": "user",
+      "content": "Los Angeles"
+    },
+    {
+      "role": "user",
+      "content": "I need help with my tax preparation as a freelancer."
+    },
+    {
+      "role": "assistant",
+      "content": "Hi there! I\''m your tax advisor bot, and I\''ll be assisting you with your tax preparation as a freelancer by asking some questions. After collecting all the required details, I\''ll prepare your final tax document. Let\''s begin! Where are you located?"
+    }, 
+    {
+      "role": "user",
+      "content": "Hello"
+    }
+  ]
+}' \
+ 'https://api.openai.com/v1/chat/completions'
 ```
 
 Replace `YOUR_API_KEY` with your actual API key from OpenAI.
